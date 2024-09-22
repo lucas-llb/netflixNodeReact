@@ -1,0 +1,8 @@
+version: '3'
+
+volumes:
+
+
+services:
+  app:
+    image: node:20.10.0-alpine

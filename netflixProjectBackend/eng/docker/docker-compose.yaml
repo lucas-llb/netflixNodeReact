@@ -1,0 +1,22 @@
+version: "3.4"
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+
+volumes:
+  netflixproject.postgres-database:
+
+services:
+  postgres:
+    image: postgres:11.12
+    volumes:
+      - netflixproject.postgres-database:/var/lib/postgresql/data
+    env_file:
+      - ./database.env
+    ports:
+      - "15432:5432"
+    networks:
+      - backend
+      - frontend
